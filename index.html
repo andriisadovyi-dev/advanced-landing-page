@@ -1,0 +1,695 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f4f7f5">
+  <meta name="description" content="Фітнес-тур у Карпатах: тренування, цифровий детокс та персональне ШІ-меню зі знайомих страв. Розрахуйте норму калорій та бронюйте місце у кемпі!">
+  <title>Фітнес-кемп «Онови своє тіло» | Тур для схуднення</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: "#2E7D5B",
+            secondary: "#246B68",
+            accent: "#FF8A3D",
+            background: "#F4F7F5",
+            surface: "#FFFEFA",
+            ink: "#172B23",
+            muted: "#56665E"
+          },
+          fontFamily: {
+            sans: ["Inter", "system-ui", "sans-serif"]
+          },
+          maxWidth: {
+            container: "1200px"
+          }
+        }
+      }
+    };
+  </script>
+</head>
+<body class="bg-background font-sans text-ink antialiased">
+  <a class="skip-link" href="#main">Перейти до основного вмісту.</a>
+
+  <header class="site-header">
+    <div class="mx-auto flex max-w-container items-center justify-between gap-4 px-4 py-3 sm:px-6 lg:px-8">
+      <a class="brand" href="#top" aria-label="ONOVA — на головну">
+        <img class="brand-logo" src="assets/onova-mark.png" alt="">
+        <span class="brand-name">ONOVA<span class="brand-dot">.</span></span>
+      </a>
+
+      <nav class="desktop-nav hidden items-center gap-1 lg:flex" aria-label="Головна навігація">
+        <a href="#how-it-works">Як це працює</a>
+        <a href="#benefits">Переваги</a>
+        <a href="#programs">Програми</a>
+        <a href="#about">Про кемп</a>
+        <a href="#reviews">Відгуки</a>
+      </nav>
+
+      <a class="button button-primary header-cta hidden sm:inline-flex transition-all duration-200 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2" href="#calculator">Розрахувати норму</a>
+      <details class="mobile-menu lg:hidden">
+        <summary aria-label="Відкрити меню"><span class="menu-icon" aria-hidden="true"></span><span>Меню</span></summary>
+        <nav class="mobile-nav" aria-label="Мобільна навігація">
+          <a href="#how-it-works">Як це працює</a>
+          <a href="#benefits">Переваги</a>
+          <a href="#programs">Програми</a>
+          <a href="#about">Про кемп</a>
+          <a href="#reviews">Відгуки</a>
+          <a href="#faq">Запитання</a>
+          <a class="button button-primary transition-all duration-200 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2" href="#calculator">Розрахувати норму</a>
+        </nav>
+      </details>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="hero-backdrop" role="img" aria-label="Гірський краєвид Карпат"></div>
+      <div class="hero-content mx-auto grid grid-cols-1 max-w-container items-center gap-6 px-4 py-8 sm:gap-10 sm:px-6 sm:py-12 md:py-16 lg:grid-cols-[1fr_0.92fr] lg:gap-14 lg:px-8 lg:py-20">
+        <div class="hero-copy">
+          <p class="eyebrow eyebrow-light"><span class="eyebrow-dot"></span>ONOVA · фітнес-кемп у Карпатах</p>
+          <h1 id="hero-title" class="mt-5 max-w-2xl text-4xl font-bold leading-tight tracking-tight sm:text-5xl lg:text-6xl">Твоє готове спортивне меню <span>без стресу та ручного підрахунку.</span></h1>
+          <p class="hero-lead mt-5 max-w-xl text-lg leading-8">
+            <span id="typed-text" aria-live="polite"></span>
+          </p>
+          <div class="hero-actions mt-7">
+            <a class="button button-primary hero-cta transition-all duration-200 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2" href="#calculator">Розрахувати норму <span aria-hidden="true">→</span></a>
+          </div>
+          <div class="hero-note mt-4 flex items-center gap-3">
+            <span class="hero-note-icon" aria-hidden="true">↘</span>
+            <p>Калькулятор ІМТ і BMR за формулою Mifflin–St Jeor</p>
+          </div>
+        </div>
+
+        <div class="calculator-card" id="calculator">
+          <div class="flex items-start justify-between gap-4">
+            <div>
+              <p class="eyebrow">Безкоштовний інструмент</p>
+              <h2 id="calculator-title" class="mt-2 text-2xl font-semibold leading-tight sm:text-3xl">Твоя стартова точка</h2>
+            </div>
+            <span class="calculator-badge" aria-hidden="true">01 / 01</span>
+          </div>
+          <p class="mt-3 text-sm leading-6 text-muted">Введи параметри, щоб отримати орієнтовну норму КБЖУ та базовий приклад спортивного меню.</p>
+
+          <form id="calculator-form" class="mt-6 space-y-4" aria-labelledby="calculator-title">
+            <div class="grid grid-cols-2 gap-3">
+              <div class="field">
+                <label for="age">Вік, років</label>
+                <input id="age" name="age" type="number" inputmode="numeric" min="18" max="100" step="1" placeholder="28" required>
+              </div>
+              <div class="field">
+                <label for="weight">Вага, кг</label>
+                <input id="weight" name="weight" type="number" inputmode="decimal" min="35" max="250" step="0.1" placeholder="65" required>
+              </div>
+              <div class="field">
+                <label for="height">Зріст, см</label>
+                <input id="height" name="height" type="number" inputmode="numeric" min="130" max="220" step="1" placeholder="168" required>
+              </div>
+              <div class="field">
+                <label for="formula-sex">Коефіцієнт формули</label>
+                <select id="formula-sex" name="formulaSex" required>
+                  <option value="" selected disabled>Обрати</option>
+                  <option value="female">Жіночий</option>
+                  <option value="male">Чоловічий</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="activity">Рівень активності</label>
+              <select id="activity" name="activity" required>
+                <option value="1.2">Переважно сидячий день</option>
+                <option value="1.375">Легка активність · 1–3 рази на тиждень</option>
+                <option value="1.55">Помірна активність · 3–5 разів на тиждень</option>
+                <option value="1.725">Висока активність · 6–7 разів на тиждень</option>
+              </select>
+            </div>
+
+            <fieldset>
+              <legend class="field-legend">Твоя ціль</legend>
+              <div class="goal-options">
+                <label class="goal-option"><input type="radio" name="goal" value="lose" checked><span>Знизити вагу</span></label>
+                <label class="goal-option"><input type="radio" name="goal" value="maintain"><span>Підтримувати</span></label>
+                <label class="goal-option"><input type="radio" name="goal" value="gain"><span>Набрати вагу</span></label>
+              </div>
+            </fieldset>
+
+            <p class="form-hint">BMR: Mifflin–St Jeor. Добова оцінка = BMR × активність × ціль (0,85 / 1 / 1,10). КБЖУ: 25% білків, 30% жирів і 45% вуглеводів.</p>
+            <button class="button button-primary w-full transition-all duration-200 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2" type="submit">Розрахувати норму <span aria-hidden="true">→</span></button>
+            <p class="privacy-hint">Дані обробляються лише у цьому браузері й не надсилаються на сервер.</p>
+          </form>
+
+          <section id="calculator-result" class="calculator-result" aria-live="polite" aria-atomic="true" hidden>
+            <div class="result-heading">
+              <div>
+                <p class="eyebrow">Твоя орієнтовна оцінка</p>
+                <h3 class="mt-2 text-2xl font-semibold">План на день</h3>
+              </div>
+              <button class="result-close" type="button" aria-label="Закрити результат">×</button>
+            </div>
+            <p id="result-calories" class="result-calories"></p>
+            <div class="result-metrics">
+              <div><span>ІМТ</span><strong id="result-bmi"></strong></div>
+              <div><span>BMR</span><strong id="result-bmr"></strong></div>
+              <div><span>Білки</span><strong id="result-protein"></strong></div>
+              <div><span>Жири</span><strong id="result-fat"></strong></div>
+              <div><span>Вуглеводи</span><strong id="result-carbs"></strong></div>
+            </div>
+            <div class="menu-sample">
+              <h4>Приклад меню зі знайомих страв</h4>
+              <ul>
+                <li><span>Сніданок</span>Сирники</li>
+                <li><span>Перекус</span>Каша</li>
+                <li><span>Обід</span>Борщ</li>
+                <li><span>Вечеря</span>Страви зі знайомих локальних продуктів</li>
+              </ul>
+              <p>Це приклад страв, а не меню з індивідуально розрахованими порціями.</p>
+            </div>
+            <p class="result-disclaimer">Розрахунок орієнтовний і не є медичною рекомендацією. Для персонального плану потрібна консультація фахівця.</p>
+            <a class="button button-secondary w-full transition-all duration-200 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2" href="#contact">Обговорити результат</a>
+          </section>
+        </div>
+      </div>
+      <a class="scroll-cue" href="#how-it-works" aria-label="Перейти до розділу «Як це працює»"><span aria-hidden="true">↓</span></a>
+    </section>
+
+    <section id="how-it-works" class="section-block mx-auto max-w-container px-4 py-16 sm:px-6 md:py-20 lg:px-8" aria-labelledby="how-title">
+      <div class="section-heading">
+        <p class="eyebrow">Просто почати</p>
+        <h2 id="how-title">Як це працює</h2>
+        <p>Розрахуй орієнтир, переглянь базовий раціон і дізнайся про фітнес-кемп у Карпатах.</p>
+      </div>
+      <div class="mt-10 grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
+        <article class="step-card">
+          <span class="step-number">01</span>
+          <div class="step-icon"><img src="assets/icon-scale.png" alt="" aria-hidden="true"></div>
+          <h3>Вкажи свої дані</h3>
+          <p>Введи вік, зріст, вагу, активність і напрям своєї цілі.</p>
+        </article>
+        <article class="step-card">
+          <span class="step-number">02</span>
+          <div class="step-icon"><img src="assets/icon-movement.png" alt="" aria-hidden="true"></div>
+          <h3>Подивись оцінку</h3>
+          <p>Калькулятор покаже ІМТ, BMR та приблизний баланс КБЖУ.</p>
+        </article>
+        <article class="step-card">
+          <span class="step-number">03</span>
+          <div class="step-icon"><img src="assets/icon-meal.png" alt="" aria-hidden="true"></div>
+          <h3>Обери наступний крок</h3>
+          <p>Збережи орієнтир для себе або запитай про формат кемпу.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="benefits" class="benefits-section" aria-labelledby="benefits-title">
+      <div class="mx-auto max-w-container px-4 py-16 sm:px-6 md:py-20 lg:px-8">
+        <div class="section-heading">
+          <p class="eyebrow eyebrow-light">Підхід ONOVA</p>
+          <h2 id="benefits-title">Менше шуму. Більше ясності.</h2>
+          <p>Цифровий інструмент і виїзний фітнес-інтенсив поєднують розрахунок харчування з відновленням у Карпатах.</p>
+        </div>
+        <div class="mt-10 grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
+          <article class="benefit-card">
+            <img class="benefit-icon" src="assets/icon-scale.png" alt="" aria-hidden="true">
+            <span class="benefit-index">01 / БЕЗ РУЧНОГО ПІДРАХУНКУ</span>
+            <h3>Базовий раціон за 90 секунд</h3>
+            <p>Введи параметри та отримай орієнтовну норму КБЖУ й приклад спортивного меню.</p>
+          </article>
+          <article class="benefit-card">
+            <img class="benefit-icon" src="assets/icon-campfire.png" alt="" aria-hidden="true">
+            <span class="benefit-index">02 / ПРОЗОРІ РОЗРАХУНКИ</span>
+            <h3>Формула Mifflin–St Jeor</h3>
+            <p>Калькулятор показує ІМТ, BMR і орієнтовну добову калорійність з урахуванням активності.</p>
+          </article>
+          <article class="benefit-card">
+            <img class="benefit-icon" src="assets/icon-meal.png" alt="" aria-hidden="true">
+            <span class="benefit-index">03 / ЛОКАЛЬНІ ПРОДУКТИ</span>
+            <h3>Знайомі українські страви</h3>
+            <p>У концепції меню — звичні локальні страви: борщ, сирники та каші.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="programs" class="section-block mx-auto max-w-container px-4 py-16 sm:px-6 md:py-20 lg:px-8" aria-labelledby="programs-title">
+      <div class="section-heading section-heading-row">
+        <div>
+          <p class="eyebrow">Знайди свій ритм</p>
+          <h2 id="programs-title">Кемп і цифрові інструменти</h2>
+          <p>ONOVA поєднує виїзний фітнес-інтенсив у Карпатах і вебсервіс для орієнтиру з харчування та активності.</p>
+        </div>
+        <a class="text-link hidden sm:inline-flex" href="#contact">Запитання про кемп? <span aria-hidden="true">↗</span></a>
+      </div>
+      <div class="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <article class="program-card">
+          <img src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&amp;fit=crop&amp;w=900&amp;q=85" alt="Гірське озеро серед Карпатських вершин" loading="lazy">
+          <div class="program-body"><img class="program-icon" src="assets/icon-movement.png" alt="" aria-hidden="true"><span class="program-tag">Цифровий інструмент</span><h3>Калькулятор КБЖУ</h3><p>Орієнтовний розрахунок ІМТ, BMR та калорійності з урахуванням активності.</p><div class="program-meta"><span>ІМТ · BMR</span><span>Формула Mifflin–St Jeor</span></div><a class="button button-outline transition-all duration-200 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2" href="#contact">Дізнатись більше <span aria-hidden="true">→</span></a></div>
+        </article>
+        <article class="program-card">
+          <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&amp;fit=crop&amp;w=900&amp;q=85" alt="Стежка в горах на світанку" loading="lazy">
+          <div class="program-body"><img class="program-icon" src="assets/icon-meal.png" alt="" aria-hidden="true"><span class="program-tag">Харчування</span><h3>Базове спортивне меню</h3><p>Концепція передбачає базовий раціон для тренувальних та відпочинкових днів.</p><div class="program-meta"><span>Тренування</span><span>Відпочинок</span></div><a class="button button-outline transition-all duration-200 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2" href="#contact">Дізнатись більше <span aria-hidden="true">→</span></a></div>
+        </article>
+        <article class="program-card">
+          <img src="https://images.unsplash.com/photo-1518837695005-2083093ee35b?auto=format&amp;fit=crop&amp;w=900&amp;q=85" alt="Тиха водна гладь на природі" loading="lazy">
+          <div class="program-body"><img class="program-icon" src="assets/icon-meal.png" alt="" aria-hidden="true"><span class="program-tag">Інструмент вебсервісу</span><h3>Заміна страви</h3><p>У специфікації сервісу передбачено заміну страви з перерахунком макросів дня.</p><div class="program-meta"><span>В один клік</span><span>Перерахунок макросів</span></div><a class="button button-outline transition-all duration-200 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2" href="#contact">Дізнатись більше <span aria-hidden="true">→</span></a></div>
+        </article>
+        <article class="program-card">
+          <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&amp;fit=crop&amp;w=900&amp;q=85" alt="Заняття з розтяжки на відкритому повітрі" loading="lazy">
+          <div class="program-body"><img class="program-icon" src="assets/icon-scale.png" alt="" aria-hidden="true"><span class="program-tag">Планування харчування</span><h3>Список покупок</h3><p>У концепції сервісу інгредієнти меню групуються у список покупок на тиждень.</p><div class="program-meta"><span>Інгредієнти</span><span>На тиждень</span></div><a class="button button-outline transition-all duration-200 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2" href="#contact">Дізнатись більше <span aria-hidden="true">→</span></a></div>
+        </article>
+        <article class="program-card">
+          <img src="https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&amp;fit=crop&amp;w=900&amp;q=85" alt="Лісова стежка у Карпатах" loading="lazy">
+          <div class="program-body"><img class="program-icon" src="assets/icon-movement.png" alt="" aria-hidden="true"><span class="program-tag">Офлайн-кемп</span><h3>Фітнес-інтенсив у Карпатах</h3><p>Концепція кемпу поєднує тренування на природі та фізичне перезавантаження.</p><div class="program-meta"><span>Тренування</span><span>Карпати</span></div><a class="button button-outline transition-all duration-200 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2" href="#contact">Дізнатись більше <span aria-hidden="true">→</span></a></div>
+        </article>
+        <article class="program-card">
+          <img src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&amp;fit=crop&amp;w=900&amp;q=85" alt="Гірський пейзаж із зеленими схилами" loading="lazy">
+          <div class="program-body"><img class="program-icon" src="assets/icon-campfire.png" alt="" aria-hidden="true"><span class="program-tag">Після заїзду</span><h3>Цифровий супровід</h3><p>Вебсервіс із трекером і персональним меню задуманий як підтримка після кемпу.</p><div class="program-meta"><span>Вебсервіс</span><span>Після кемпу</span></div><a class="button button-outline transition-all duration-200 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2" href="#contact">Дізнатись більше <span aria-hidden="true">→</span></a></div>
+        </article>
+      </div>
+      <p class="programs-note">Калькулятор і частина вебсервісу наразі демонстраційні. Деталі заїзду, вартість і доступність уточнюються до бронювання.</p>
+    </section>
+
+    <section id="about" class="about-section" aria-labelledby="about-title">
+      <div class="mx-auto grid max-w-container items-center gap-10 px-4 py-16 sm:px-6 md:py-20 lg:grid-cols-2 lg:gap-16 lg:px-8">
+        <figure class="about-gallery">
+          <div class="about-video aspect-video w-full rounded-xl shadow-lg">
+            <iframe src="https://www.youtube-nocookie.com/embed/1ydDOMMu2Yk" title="Відео про Карпати: Unique Carpathians — Discover this Beautiful Area in Ukraine" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          </div>
+          <figcaption class="media-note">Відео «Unique Carpathians — Discover this Beautiful Area in Ukraine», канал See the World.</figcaption>
+        </figure>
+        <div class="about-copy">
+          <p class="eyebrow">Місце, де можна видихнути</p>
+          <h2 id="about-title">Карпати — не фон. Це частина досвіду.</h2>
+          <p class="about-lead">Знаємо, як важко вирватися з інформаційного шуму та відновитися після вигорання. Іноді зупиняє страх, що рівень підготовки недостатній, а результат не збережеться після відпустки.</p>
+          <p>Кемп «Онови своє тіло» задуманий як простір у лісах Карпат, де поєднуються фізичне перезавантаження й цифрові технології. У концепції — тренування на свіжому повітрі, знайомі локальні страви та меню, адаптоване до цілі.</p>
+          <p>Після заїзду вебінструмент має допомагати зберегти цей досвід удома: персональне меню та трекер задумані як цифровий супровід.</p>
+          <ul class="about-points">
+            <li><span aria-hidden="true">✓</span> Тренування та цифровий детокс у Карпатах</li>
+            <li><span aria-hidden="true">✓</span> Борщ, сирники й каші з локальних продуктів</li>
+            <li><span aria-hidden="true">✓</span> Вебінструмент для супроводу після заїзду</li>
+          </ul>
+          <a class="button button-primary mt-7 transition-all duration-200 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2" href="#contact">Дізнатись про кемп <span aria-hidden="true">→</span></a>
+          <p class="media-note">Концепція ONOVA поєднує тренування в Карпатах, цифровий детокс і вебінструмент для харчування.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="gallery-section" aria-labelledby="gallery-title">
+      <div class="mx-auto max-w-container px-4 py-16 sm:px-6 md:py-20 lg:px-8">
+        <div class="section-heading">
+          <p class="eyebrow">Карпати · тренування · відновлення</p>
+          <h2 id="gallery-title">Атмосфера ONOVA</h2>
+          <p>Натисни на знімок, щоб переглянути його в повному розмірі у світловій галереї.</p>
+        </div>
+        <div class="onova-gallery mt-10" aria-label="Галерея реальних фотографій Карпат">
+          <a class="gallery-item" href="https://upload.wikimedia.org/wikipedia/commons/7/74/%D0%93%D0%BE%D1%80%D0%B0_%D0%93%D0%BE%D0%B2%D0%B5%D1%80%D0%BB%D0%B0_%D0%BF%D1%96%D1%81%D0%BB%D1%8F_%D0%B7%D0%B0%D1%85%D0%BE%D0%B4%D1%83_%D1%81%D0%BE%D0%BD%D1%86%D1%8F.jpg" data-full="https://upload.wikimedia.org/wikipedia/commons/7/74/%D0%93%D0%BE%D1%80%D0%B0_%D0%93%D0%BE%D0%B2%D0%B5%D1%80%D0%BB%D0%B0_%D0%BF%D1%96%D1%81%D0%BB%D1%8F_%D0%B7%D0%B0%D1%85%D0%BE%D0%B4%D1%83_%D1%81%D0%BE%D0%BD%D1%86%D1%8F.jpg" data-caption="Говерла після заходу сонця">
+            <img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/7/74/%D0%93%D0%BE%D1%80%D0%B0_%D0%93%D0%BE%D0%B2%D0%B5%D1%80%D0%BB%D0%B0_%D0%BF%D1%96%D1%81%D0%BB%D1%8F_%D0%B7%D0%B0%D1%85%D0%BE%D0%B4%D1%83_%D1%81%D0%BE%D0%BD%D1%86%D1%8F.jpg/1280px-%D0%93%D0%BE%D1%80%D0%B0_%D0%93%D0%BE%D0%B2%D0%B5%D1%80%D0%BB%D0%B0_%D0%BF%D1%96%D1%81%D0%BB%D1%8F_%D0%B7%D0%B0%D1%85%D0%BE%D0%B4%D1%83_%D1%81%D0%BE%D0%BD%D1%86%D1%8F.jpg" alt="Говерла після заходу сонця" loading="lazy">
+            <span class="gallery-overlay" aria-hidden="true">Збільшити ↗</span>
+          </a>
+          <a class="gallery-item" href="https://upload.wikimedia.org/wikipedia/commons/2/29/Carpathian_Mountains_in_winter.jpg" data-full="https://upload.wikimedia.org/wikipedia/commons/2/29/Carpathian_Mountains_in_winter.jpg" data-caption="Карпати взимку">
+            <img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/2/29/Carpathian_Mountains_in_winter.jpg/1280px-Carpathian_Mountains_in_winter.jpg" alt="Карпатські гори взимку" loading="lazy">
+            <span class="gallery-overlay" aria-hidden="true">Збільшити ↗</span>
+          </a>
+          <a class="gallery-item" href="https://upload.wikimedia.org/wikipedia/commons/8/82/%D0%93%D0%BE%D1%80%D0%B0_%D0%A1%D1%82%D1%80%D0%B8%D0%BC%D0%B1%D0%B0_%D0%B2%D0%B7%D0%B8%D0%BC%D0%BA%D1%83.jpg" data-full="https://upload.wikimedia.org/wikipedia/commons/8/82/%D0%93%D0%BE%D1%80%D0%B0_%D0%A1%D1%82%D1%80%D0%B8%D0%BC%D0%B1%D0%B0_%D0%B2%D0%B7%D0%B8%D0%BC%D0%BA%D1%83.jpg" data-caption="Гора Стримба взимку">
+            <img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/8/82/%D0%93%D0%BE%D1%80%D0%B0_%D0%A1%D1%82%D1%80%D0%B8%D0%BC%D0%B1%D0%B0_%D0%B2%D0%B7%D0%B8%D0%BC%D0%BA%D1%83.jpg/1280px-%D0%93%D0%BE%D1%80%D0%B0_%D0%A1%D1%82%D1%80%D0%B8%D0%BC%D0%B1%D0%B0_%D0%B2%D0%B7%D0%B8%D0%BC%D0%BA%D1%83.jpg" alt="Гора Стримба взимку" loading="lazy">
+            <span class="gallery-overlay" aria-hidden="true">Збільшити ↗</span>
+          </a>
+          <a class="gallery-item" href="https://upload.wikimedia.org/wikipedia/commons/a/a8/%D0%9C%D0%BE%D1%80%D0%BE%D0%B7%D0%BD%D0%B8%D0%B9_%D1%80%D0%B0%D0%BD%D0%BE%D0%BA_%D0%BD%D0%B0%D0%B4_%D0%AF%D1%80%D0%B5%D0%BC%D1%87%D0%B5%D1%8E.jpg" data-full="https://upload.wikimedia.org/wikipedia/commons/a/a8/%D0%9C%D0%BE%D1%80%D0%BE%D0%B7%D0%BD%D0%B8%D0%B9_%D1%80%D0%B0%D0%BD%D0%BE%D0%BA_%D0%BD%D0%B0%D0%B4_%D0%AF%D1%80%D0%B5%D0%BC%D1%87%D0%B5%D1%8E.jpg" data-caption="Морозний ранок над Яремче">
+            <img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a8/%D0%9C%D0%BE%D1%80%D0%BE%D0%B7%D0%BD%D0%B8%D0%B9_%D1%80%D0%B0%D0%BD%D0%BE%D0%BA_%D0%BD%D0%B0%D0%B4_%D0%AF%D1%80%D0%B5%D0%BC%D1%87%D0%B5%D1%8E.jpg/1280px-%D0%9C%D0%BE%D1%80%D0%BE%D0%B7%D0%BD%D0%B8%D0%B9_%D1%80%D0%B0%D0%BD%D0%BE%D0%BA_%D0%BD%D0%B0%D0%B4_%D0%AF%D1%80%D0%B5%D0%BC%D1%87%D0%B5%D1%8E.jpg" alt="Морозний ранок над Яремче" loading="lazy">
+            <span class="gallery-overlay" aria-hidden="true">Збільшити ↗</span>
+          </a>
+          <a class="gallery-item" href="https://upload.wikimedia.org/wikipedia/commons/9/9d/%D0%97%D0%B0_%D1%81%D0%B5%D0%BB%D0%BE%D0%BC_2.jpg" data-full="https://upload.wikimedia.org/wikipedia/commons/9/9d/%D0%97%D0%B0_%D1%81%D0%B5%D0%BB%D0%BE%D0%BC_2.jpg" data-caption="Карпатська місцевість за селом">
+            <img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9d/%D0%97%D0%B0_%D1%81%D0%B5%D0%BB%D0%BE%D0%BC_2.jpg/1280px-%D0%97%D0%B0_%D1%81%D0%B5%D0%BB%D0%BE%D0%BC_2.jpg" alt="Карпатська місцевість за селом" loading="lazy">
+            <span class="gallery-overlay" aria-hidden="true">Збільшити ↗</span>
+          </a>
+          <a class="gallery-item" href="https://upload.wikimedia.org/wikipedia/commons/c/c1/Stryi-San_Highland_spine_of_the_Carpathian_Mountains%2C_Ukraine.jpg" data-full="https://upload.wikimedia.org/wikipedia/commons/c/c1/Stryi-San_Highland_spine_of_the_Carpathian_Mountains%2C_Ukraine.jpg" data-caption="Гірський хребет Сянь–Стрий">
+            <img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c1/Stryi-San_Highland_spine_of_the_Carpathian_Mountains%2C_Ukraine.jpg/1280px-Stryi-San_Highland_spine_of_the_Carpathian_Mountains%2C_Ukraine.jpg" alt="Гірський хребет Українських Карпат" loading="lazy">
+            <span class="gallery-overlay" aria-hidden="true">Збільшити ↗</span>
+          </a>
+        </div>
+        <dialog class="gallery-dialog" id="gallery-dialog" aria-labelledby="gallery-dialog-caption">
+          <button class="gallery-dialog-close" type="button" aria-label="Закрити збільшене зображення">
+            <span aria-hidden="true">×</span>
+            <span class="gallery-dialog-close-label">Закрити</span>
+          </button>
+          <img id="gallery-dialog-image" src="" alt="">
+          <p id="gallery-dialog-caption"></p>
+        </dialog>
+      </div>
+    </section>
+
+    <section id="reviews" class="reviews-section" aria-labelledby="reviews-title">
+      <div class="mx-auto max-w-container px-4 py-16 sm:px-6 md:py-20 lg:px-8">
+        <div class="reviews-heading">
+          <div class="section-heading">
+            <p class="eyebrow eyebrow-light">Досвід учасників</p>
+            <h2 id="reviews-title">Відгуки ONOVA</h2>
+            <p>Справжні враження з’являться тут лише після заїздів і отримання письмової згоди учасників.</p>
+          </div>
+          <div class="reviews-controls" aria-label="Керування слайдером відгуків">
+            <button class="reviews-button reviews-button-prev" type="button" aria-label="Попередній відгук">
+              <span aria-hidden="true">←</span>
+            </button>
+            <button class="reviews-button reviews-button-next" type="button" aria-label="Наступний відгук">
+              <span aria-hidden="true">→</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="swiper reviews-swiper mt-10" aria-label="Слайдер відгуків учасників">
+          <div class="swiper-wrapper">
+            <article class="swiper-slide review-card">
+              <div class="review-card-top">
+                <span class="review-status">Очікується погодження</span>
+                <span class="review-stars" aria-label="Оцінка не публікується">—</span>
+              </div>
+              <blockquote>«Місце для справжнього досвіду учасника про тренування в Карпатах, відновлення та цифровий супровід після кемпу».</blockquote>
+              <footer class="review-author">
+                <span class="review-avatar" aria-hidden="true">ON</span>
+                <div>
+                  <cite>Учасник / учасниця ONOVA</cite>
+                  <time datetime="">Публікація після згоди</time>
+                </div>
+              </footer>
+            </article>
+
+            <article class="swiper-slide review-card">
+              <div class="review-card-top">
+                <span class="review-status">Підтвердження авторства</span>
+                <span class="review-stars" aria-label="Оцінка не публікується">—</span>
+              </div>
+              <blockquote>«Сюди буде додано підтверджену цитату автора — без вигаданих історій, оцінок і обіцянок про результат».</blockquote>
+              <footer class="review-author">
+                <span class="review-avatar" aria-hidden="true">ON</span>
+                <div>
+                  <cite>Ім’я учасника ONOVA</cite>
+                  <time datetime="">Дата після публікації</time>
+                </div>
+              </footer>
+            </article>
+
+            <article class="swiper-slide review-card">
+              <div class="review-card-top">
+                <span class="review-status">Приватність першочергово</span>
+                <span class="review-stars" aria-label="Оцінка не публікується">—</span>
+              </div>
+              <blockquote>«Ім’я, фотографія та текст відгуку публікуються тільки в тому форматі, на який учасник або учасниця дасть дозвіл».</blockquote>
+              <footer class="review-author">
+                <span class="review-avatar" aria-hidden="true">ON</span>
+                <div>
+                  <cite>Автор відгуку</cite>
+                  <time datetime="">Дата з погодження</time>
+                </div>
+              </footer>
+            </article>
+          </div>
+          <div class="swiper-pagination reviews-pagination" aria-label="Сторінки слайдера відгуків"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" class="faq-section" aria-labelledby="faq-title">
+      <div class="mx-auto grid max-w-container gap-10 px-4 py-16 sm:px-6 md:py-20 lg:grid-cols-[0.8fr_1.2fr] lg:px-8">
+        <div class="section-heading faq-heading">
+          <p class="eyebrow">Відповіді без дрібного шрифту</p>
+          <h2 id="faq-title">Часті запитання</h2>
+          <p>Не знайшла відповідь? <a href="#contact">Запитай нас особисто.</a></p>
+        </div>
+        <div class="faq-list">
+          <details>
+            <summary>Чи можна їхати до кемпу до 18 років?</summary>
+            <p>Ні. Програми ONOVA призначені для повнолітніх учасників — від 18 років.</p>
+          </details>
+          <details>
+            <summary>Наскільки точний розрахунок калькулятора?</summary>
+            <p>Це приблизна оцінка за формулою Mifflin–St Jeor та обраним рівнем активності. Вона не враховує індивідуальний стан здоров’я й не замінює консультацію фахівця.</p>
+          </details>
+          <details>
+            <summary>Що входить у вартість кемпу?</summary>
+            <p>Склад і ціна залежать від обраного заїзду та локації. Актуальні умови, проживання, харчування й активності уточнюються до бронювання.</p>
+          </details>
+          <details>
+            <summary>Як працює меню після заїзду?</summary>
+            <p>Калькулятор дає лише базовий приклад. Після заїзду меню та порції варто узгоджувати з фахівцем з урахуванням ваших потреб і самопочуття.</p>
+          </details>
+          <details>
+            <summary>Чи зберігаються мої дані калькулятора?</summary>
+            <p>Ні. Розрахунок виконується у вашому браузері; дані калькулятора не надсилаються та не зберігаються на сервері.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact-section" aria-labelledby="contact-title">
+      <div class="mx-auto grid max-w-container gap-10 px-4 py-16 sm:px-6 md:py-20 lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:px-8">
+        <div class="contact-copy">
+          <p class="eyebrow eyebrow-light">Почнемо з розмови</p>
+          <h2 id="contact-title">Записатись на консультацію</h2>
+          <p>Запитай про фітнес-кемп у Карпатах, цифровий детокс або інструменти для розрахунку КБЖУ та меню.</p>
+          <div class="contact-aside"><span aria-hidden="true">↗</span><p>Без зобов’язань бронювати місце — спершу можна просто поставити запитання.</p></div>
+        </div>
+        <form id="contact-form" class="contact-form mx-auto grid w-full max-w-2xl gap-5 rounded-3xl bg-surface p-4 text-ink shadow-xl sm:p-6" aria-describedby="contact-status" novalidate>
+          <div class="field grid gap-2">
+            <label class="text-sm font-semibold text-ink" for="contact-name">Ім’я</label>
+            <input class="peer min-h-12 w-full rounded-lg border border-slate-300 bg-surface px-3 py-3 text-sm text-ink transition-colors duration-200 hover:border-primary focus-visible:border-secondary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary/30 aria-[invalid=true]:border-red-600 aria-[invalid=true]:hover:border-red-600 aria-[invalid=true]:focus-visible:border-red-600 aria-[invalid=true]:focus-visible:ring-red-300 aria-[invalid=false]:border-primary aria-[invalid=false]:hover:border-primary aria-[invalid=false]:focus-visible:border-primary aria-[invalid=false]:focus-visible:ring-primary/30" id="contact-name" name="name" type="text" autocomplete="name" minlength="2" maxlength="80" required>
+            <p id="contact-name-error" class="m-0 hidden text-sm text-red-700 peer-aria-[invalid=true]:block" aria-live="polite">Введіть ім’я (від 2 до 80 символів).</p>
+            <p id="contact-name-success" class="m-0 hidden items-center gap-1 text-sm text-green-700 peer-aria-[invalid=false]:flex" aria-live="polite"><span aria-hidden="true">✓</span> Ім’я введено коректно.</p>
+          </div>
+          <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+            <div class="field grid gap-2">
+              <label class="text-sm font-semibold text-ink" for="contact-email">Email</label>
+              <input class="peer min-h-12 w-full rounded-lg border border-slate-300 bg-surface px-3 py-3 text-sm text-ink transition-colors duration-200 hover:border-primary focus-visible:border-secondary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary/30 aria-[invalid=true]:border-red-600 aria-[invalid=true]:hover:border-red-600 aria-[invalid=true]:focus-visible:border-red-600 aria-[invalid=true]:focus-visible:ring-red-300 aria-[invalid=false]:border-primary aria-[invalid=false]:hover:border-primary aria-[invalid=false]:focus-visible:border-primary aria-[invalid=false]:focus-visible:ring-primary/30" id="contact-email" name="email" type="email" autocomplete="email" required>
+              <p id="contact-email-error" class="m-0 hidden text-sm text-red-700 peer-aria-[invalid=true]:block" aria-live="polite">Введіть коректну адресу електронної пошти.</p>
+              <p id="contact-email-success" class="m-0 hidden items-center gap-1 text-sm text-green-700 peer-aria-[invalid=false]:flex" aria-live="polite"><span aria-hidden="true">✓</span> Електронну адресу введено коректно.</p>
+            </div>
+            <div class="field grid gap-2">
+              <label class="text-sm font-semibold text-ink" for="contact-phone">Телефон</label>
+              <input class="peer min-h-12 w-full rounded-lg border border-slate-300 bg-surface px-3 py-3 text-sm text-ink transition-colors duration-200 hover:border-primary focus-visible:border-secondary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary/30 aria-[invalid=true]:border-red-600 aria-[invalid=true]:hover:border-red-600 aria-[invalid=true]:focus-visible:border-red-600 aria-[invalid=true]:focus-visible:ring-red-300 aria-[invalid=false]:border-primary aria-[invalid=false]:hover:border-primary aria-[invalid=false]:focus-visible:border-primary aria-[invalid=false]:focus-visible:ring-primary/30" id="contact-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" pattern="\+380\d{9}" required>
+              <p id="contact-phone-error" class="m-0 hidden text-sm text-red-700 peer-aria-[invalid=true]:block" aria-live="polite">Введіть номер у форматі +380XXXXXXXXX: після +380 має бути рівно 9 цифр, без пробілів чи інших символів.</p>
+              <p id="contact-phone-success" class="m-0 hidden items-center gap-1 text-sm text-green-700 peer-aria-[invalid=false]:flex" aria-live="polite"><span aria-hidden="true">✓</span> Номер телефону введено коректно.</p>
+            </div>
+          </div>
+          <div class="field grid gap-2">
+            <label class="text-sm font-semibold text-ink" for="contact-message">Повідомлення</label>
+            <textarea class="peer min-h-32 w-full resize-y rounded-lg border border-slate-300 bg-surface px-3 py-3 text-sm leading-6 text-ink transition-colors duration-200 hover:border-primary focus-visible:border-secondary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary/30 aria-[invalid=true]:border-red-600 aria-[invalid=true]:hover:border-red-600 aria-[invalid=true]:focus-visible:border-red-600 aria-[invalid=true]:focus-visible:ring-red-300 aria-[invalid=false]:border-primary aria-[invalid=false]:hover:border-primary aria-[invalid=false]:focus-visible:border-primary aria-[invalid=false]:focus-visible:ring-primary/30" id="contact-message" name="message" rows="5" minlength="10" maxlength="2000" required></textarea>
+            <p id="contact-message-error" class="m-0 hidden text-sm text-red-700 peer-aria-[invalid=true]:block" aria-live="polite">Повідомлення має містити від 10 до 2000 символів.</p>
+            <p id="contact-message-success" class="m-0 hidden items-center gap-1 text-sm text-green-700 peer-aria-[invalid=false]:flex" aria-live="polite"><span aria-hidden="true">✓</span> Повідомлення готове до надсилання.</p>
+          </div>
+          <div class="field grid gap-2 group">
+            <div class="flex items-start gap-3 text-sm leading-6 text-muted">
+              <input class="peer mt-1 h-5 w-5 shrink-0 accent-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2 aria-[invalid=true]:ring-2 aria-[invalid=true]:ring-red-500 aria-[invalid=true]:focus-visible:ring-red-500 aria-[invalid=false]:ring-2 aria-[invalid=false]:ring-primary aria-[invalid=false]:focus-visible:ring-primary" id="contact-consent" type="checkbox" name="consent" required>
+              <label class="cursor-pointer" for="contact-consent">Погоджуюсь на обробку контактних даних для відповіді на запит і приймаю <a class="font-medium text-primary underline underline-offset-2 transition-colors hover:text-secondary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent" href="#privacy">політику конфіденційності</a>.</label>
+            </div>
+            <p id="contact-consent-error" class="m-0 hidden text-sm text-red-700 group-has-[input[aria-invalid=true]]:block" aria-live="polite">Підтвердьте згоду на обробку персональних даних.</p>
+            <p id="contact-consent-success" class="m-0 hidden items-center gap-1 text-sm text-green-700 group-has-[input[aria-invalid=false]]:flex" aria-live="polite"><span aria-hidden="true">✓</span> Згоду підтверджено.</p>
+          </div>
+          <button class="button button-primary min-h-12 w-full rounded-lg px-6 py-3 text-sm transition-all duration-200 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2" type="submit">Надіслати</button>
+          <p id="contact-status" class="contact-status" role="status">Демо-форма: сервіс надсилання ще не підключений. Дані нікуди не передаються.</p>
+        </form>
+        <figure class="contact-map">
+          <div class="contact-map-frame">
+            <iframe src="https://www.google.com/maps?q=Yaremche%2C%20Ivano-Frankivsk%20Oblast%2C%20Ukraine&amp;output=embed" title="Карта-орієнтир: Яремче, Івано-Франківська область" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+          <figcaption class="contact-map-caption">Карта-орієнтир: Яремче, Івано-Франківська область. Точну локацію кемпу уточнюйте перед бронюванням.</figcaption>
+        </figure>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="mx-auto max-w-container px-4 py-12 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 gap-9 sm:grid-cols-2 lg:grid-cols-4">
+        <div class="footer-brand">
+          <a class="brand brand-light" href="#top" aria-label="ONOVA — на початок сторінки"><img class="brand-logo" src="assets/onova-mark.png" alt=""><span class="brand-name">ONOVA</span></a>
+          <p>Фітнес-кемп у Карпатах і вебсервіс для розрахунку КБЖУ та спортивного меню.</p>
+        </div>
+        <nav aria-label="Навігація у підвалі">
+          <h2>Навігація</h2>
+          <ul><li><a href="#how-it-works">Як це працює</a></li><li><a href="#programs">Програми</a></li><li><a href="#about">Про кемп</a></li><li><a href="#faq">Запитання</a></li></ul>
+        </nav>
+        <div>
+          <h2>Зв’язок</h2>
+          <p>Щоб обговорити кемп і цифровий інструмент, скористайся формою консультації.</p>
+          <a class="footer-cta transition-colors duration-200 hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2" href="#contact">Записатись на консультацію <span aria-hidden="true">↗</span></a>
+        </div>
+        <div>
+          <h2>Важливо</h2>
+          <p>Розрахунки на сайті мають орієнтовний характер і не є медичною рекомендацією.</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 ONOVA. Усі права захищено.</p>
+        <div class="footer-legal">
+          <a href="#privacy">Конфіденційність</a><span aria-hidden="true">·</span><a href="#offer">Оферта</a>
+        </div>
+      </div>
+      <details class="footer-disclosure" id="privacy">
+        <summary>Коротко про конфіденційність</summary>
+        <p>Дані калькулятора обробляються лише у браузері. Контактна форма демонстраційна й не передає дані; не надсилайте через неї чутливу інформацію.</p>
+      </details>
+      <details class="footer-disclosure" id="offer">
+        <summary>Інформація про умови</summary>
+        <p>Ця демонстраційна сторінка не є публічною офертою. Умови кемпу, ціна та доступність програм мають бути підтверджені до бронювання.</p>
+      </details>
+    </div>
+  </footer>
+
+  <div id="success-modal" class="fixed inset-0 z-[100] hidden items-center justify-center overflow-y-auto bg-ink/60 p-4" aria-hidden="true">
+    <section class="relative my-auto w-full max-w-md rounded-3xl bg-surface p-6 text-center text-ink shadow-2xl sm:p-8" role="dialog" aria-modal="true" aria-labelledby="success-modal-title" aria-describedby="success-modal-description success-modal-note" tabindex="-1">
+      <button class="absolute right-3 top-3 inline-flex h-11 w-11 items-center justify-center rounded-full text-2xl text-muted transition-colors hover:bg-background hover:text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary" type="button" aria-label="Закрити повідомлення" data-close-success-modal>×</button>
+      <div class="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-primary/10 text-3xl font-semibold text-primary" aria-hidden="true">✓</div>
+      <h2 id="success-modal-title" class="mt-5 text-2xl font-semibold">Дякуємо!</h2>
+      <p id="success-modal-description" class="mt-3 text-base leading-7">Ваше повідомлення успішно надіслано.</p>
+      <p id="success-modal-note" class="mt-3 text-sm leading-6 text-muted">Це демонстраційне підтвердження: сервер не підключений і дані не передавалися.</p>
+      <button class="button button-primary mt-6 min-h-12 w-full rounded-lg px-6 py-3 text-sm transition-all duration-200 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2" type="button" data-close-success-modal>Закрити</button>
+    </section>
+  </div>
+
+  <script>
+    (() => {
+      const calculatorForm = document.querySelector("#calculator-form");
+      const result = document.querySelector("#calculator-result");
+      const mobileMenu = document.querySelector(".mobile-menu");
+
+      mobileMenu.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => {
+          mobileMenu.open = false;
+        });
+      });
+
+      const setText = (id, value) => {
+        document.querySelector(`#${id}`).textContent = value;
+      };
+
+      calculatorForm.addEventListener("submit", (event) => {
+        event.preventDefault();
+        if (!calculatorForm.reportValidity()) return;
+
+        const formData = new FormData(calculatorForm);
+        const age = Number(formData.get("age"));
+        const weight = Number(formData.get("weight"));
+        const height = Number(formData.get("height"));
+        const activity = Number(formData.get("activity"));
+        const formulaSex = formData.get("formulaSex");
+        const goal = formData.get("goal");
+
+        const bmr = 10 * weight + 6.25 * height - 5 * age + (formulaSex === "male" ? 5 : -161);
+        const maintenance = bmr * activity;
+        const goalFactor = goal === "lose" ? 0.85 : goal === "gain" ? 1.1 : 1;
+        const calories = Math.round(maintenance * goalFactor);
+        const bmi = weight / ((height / 100) ** 2);
+
+        setText("result-calories", `${calories.toLocaleString("uk-UA")} ккал / день`);
+        setText("result-bmi", `${bmi.toFixed(1)} кг/м²`);
+        setText("result-bmr", `${Math.round(bmr).toLocaleString("uk-UA")} ккал`);
+        setText("result-protein", `${Math.round(calories * 0.25 / 4)} г`);
+        setText("result-fat", `${Math.round(calories * 0.30 / 9)} г`);
+        setText("result-carbs", `${Math.round(calories * 0.45 / 4)} г`);
+
+        result.hidden = false;
+        result.scrollIntoView({ behavior: "smooth", block: "nearest" });
+      });
+
+      result.querySelector(".result-close").addEventListener("click", () => {
+        result.hidden = true;
+        calculatorForm.querySelector("button[type='submit']").focus();
+      });
+
+    })();
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.1.0/dist/typed.umd.js"></script>
+  <script>
+    (() => {
+      if (!window.Swiper) return;
+
+      new Swiper(".reviews-swiper", {
+        slidesPerView: 1,
+        spaceBetween: 20,
+        loop: true,
+        autoplay: {
+          delay: 3500,
+          disableOnInteraction: false
+        },
+        grabCursor: true,
+        watchOverflow: true,
+        keyboard: {
+          enabled: true,
+          onlyInViewport: true
+        },
+        navigation: {
+          prevEl: ".reviews-button-prev",
+          nextEl: ".reviews-button-next"
+        },
+        pagination: {
+          el: ".reviews-pagination",
+          clickable: true
+        },
+        breakpoints: {
+          640: {
+            slidesPerView: 2,
+            spaceBetween: 20
+          },
+          1024: {
+            slidesPerView: 3,
+            spaceBetween: 24
+          }
+        }
+      });
+    })();
+
+    (() => {
+      const dialog = document.querySelector("#gallery-dialog");
+      const dialogImage = document.querySelector("#gallery-dialog-image");
+      const dialogCaption = document.querySelector("#gallery-dialog-caption");
+      const closeButton = dialog?.querySelector(".gallery-dialog-close");
+      if (!dialog || !dialogImage || !dialogCaption) return;
+
+      document.querySelectorAll(".onova-gallery .gallery-item").forEach((item) => {
+        item.addEventListener("click", (event) => {
+          event.preventDefault();
+          const image = item.querySelector("img");
+          dialogImage.src = item.dataset.full || item.href;
+          dialogImage.alt = image?.alt || item.dataset.caption || "";
+          dialogCaption.textContent = item.dataset.caption || "";
+          dialog.showModal();
+        });
+      });
+
+      closeButton?.addEventListener("click", () => dialog.close());
+      dialog.addEventListener("click", (event) => {
+        if (event.target === dialog) dialog.close();
+      });
+    })();
+
+    (() => {
+      if (!window.Typed) return;
+
+      const typedText = document.querySelector("#typed-text");
+      if (!typedText) return;
+
+      new Typed("#typed-text", {
+        strings: [
+          "Розрахуй базове меню за 90 секунд.",
+          "Синхронізуй харчування з тренуваннями.",
+          "Відновлюйся серед Карпат із ONOVA."
+        ],
+        typeSpeed: 50,
+        backSpeed: 30,
+        backDelay: 2500,
+        loop: true,
+        smartBackspace: true
+      });
+    })();
+  </script>
+  <script src="assets/js/validation.js"></script>
+</body>
+</html>
