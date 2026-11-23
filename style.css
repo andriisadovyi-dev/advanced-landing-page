@@ -74,6 +74,11 @@ textarea:focus-visible {
   outline-offset: 3px;
 }
 
+[tabindex]:focus-visible {
+  outline: 2px solid var(--color-secondary);
+  outline-offset: 3px;
+}
+
 ::selection {
   color: var(--color-text);
   background: var(--color-background);
@@ -333,7 +338,7 @@ textarea:focus-visible {
   position: absolute;
   z-index: -2;
   inset: 0;
-  background-image: url("https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=2200&q=90");
+  background-image: url("https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&fm=webp&w=1600&q=75");
   background-position: center 54%;
   background-size: cover;
   transform: scale(1.02);
@@ -573,6 +578,17 @@ fieldset {
 
 .package-section {
   background: var(--color-surface);
+}
+
+.benefits-section,
+.package-section,
+.about-section,
+.gallery-section,
+.reviews-section,
+.faq-section,
+.contact-section {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 700px;
 }
 
 .package-builder {
