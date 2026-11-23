@@ -19,36 +19,13 @@
   <title>Фітнес-кемп «Онови своє тіло» | Тур для схуднення</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
   <link rel="preconnect" href="https://images.unsplash.com" crossorigin>
-  <link rel="preload" as="image" href="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&amp;fit=crop&amp;fm=webp&amp;w=1600&amp;q=75" imagesizes="100vw" fetchpriority="high">
+  <link rel="preload" as="image" media="(max-width: 640px)" href="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&amp;fit=crop&amp;fm=webp&amp;w=900&amp;q=70" imagesizes="100vw" fetchpriority="high">
+  <link rel="preload" as="image" media="(min-width: 641px)" href="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&amp;fit=crop&amp;fm=webp&amp;w=1600&amp;q=75" imagesizes="100vw" fetchpriority="high">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+  <link rel="stylesheet" href="assets/vendor/swiper-bundle.min.css">
+  <link rel="stylesheet" href="assets/css/tailwind.css">
   <link rel="stylesheet" href="style.css">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            primary: "#2E7D5B",
-            secondary: "#246B68",
-            accent: "#FF8A3D",
-            background: "#F4F7F5",
-            surface: "#FFFEFA",
-            ink: "#172B23",
-            muted: "#56665E"
-          },
-          fontFamily: {
-            sans: ["Inter", "system-ui", "sans-serif"]
-          },
-          maxWidth: {
-            container: "1200px"
-          }
-        }
-      }
-    };
-  </script>
 </head>
 <body class="bg-background font-sans text-ink antialiased">
   <a class="skip-link" href="#main">Перейти до основного вмісту.</a>
@@ -57,7 +34,7 @@
     <div class="mx-auto flex max-w-container items-center justify-between gap-4 px-4 py-3 sm:px-6 lg:px-8">
       <a class="brand" href="#top" aria-label="ONOVA — на головну">
         <img class="brand-logo" src="assets/onova-mark.webp" alt="" width="56" height="62" decoding="async">
-        <span class="brand-name">ONOVA<span class="brand-dot">.</span></span>
+        <span class="brand-name">ONOVA<span class="brand-dot" aria-hidden="true">.</span></span>
       </a>
 
       <nav class="desktop-nav hidden items-center gap-1 lg:flex" aria-label="Головна навігація">
@@ -704,8 +681,8 @@
     })();
   </script>
   <script src="assets/js/widget.js" defer></script>
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.1.0/dist/typed.umd.js"></script>
+  <script src="assets/vendor/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/typed.umd.js"></script>
   <script>
     (() => {
       if (!window.Swiper) return;

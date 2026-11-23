@@ -344,6 +344,12 @@ textarea:focus-visible {
   transform: scale(1.02);
 }
 
+@media (max-width: 640px) {
+  .hero-backdrop {
+    background-image: url("https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&fm=webp&w=900&q=70");
+  }
+}
+
 .hero::before {
   position: absolute;
   z-index: -1;
@@ -1519,7 +1525,7 @@ fieldset {
 }
 
 .review-stars {
-  color: var(--color-accent);
+  color: var(--color-primary);
   font-size: 22px;
   font-weight: 700;
 }
@@ -1758,7 +1764,7 @@ fieldset {
 .site-footer > div > div > p {
   max-width: 250px;
   margin: 16px 0 0;
-  color: rgb(255 255 255 / 68%);
+  color: rgb(255 255 255 / 82%);
   font-size: 14px;
   line-height: 20px;
 }
@@ -1781,7 +1787,7 @@ fieldset {
 
 .site-footer li a,
 .footer-bottom a {
-  color: rgb(255 255 255 / 72%);
+  color: rgb(255 255 255 / 82%);
   font-size: 14px;
   line-height: 20px;
   transition: color var(--transition-fast);
@@ -1798,7 +1804,7 @@ fieldset {
   align-items: center;
   gap: 8px;
   margin-top: 12px;
-  color: var(--color-accent);
+  color: #fff;
   font-size: 14px;
   font-weight: 600;
   line-height: 20px;
